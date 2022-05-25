@@ -11,13 +11,19 @@ I've made filler modules to be adapted later.
             -> Interactions         -> Final Position
 
 '''
+height = 40e-3  # width (x) 40mm
+width = 40e-3  # height (y)  40mm
+source_to_inner_surface = 0.005e-3
+source_to_outer_surface = 0.005e-3
+thickness = source_to_inner_surface  + source_to_outer_surface
+diameter = 0.4e-3  # 0.4 mm   # detector diameter (z)
 
-def Parallel_Plate(E, height, width, innerplate_to_source, thickness, diameter):
-    source_to_outerplate = abs(thickness - innerplate_to_source)
+
+def Parallel_Plate(E, height, width, source_to_inner_surface, source_to_outer_surface, diameter):
+    thickness = source_to_inner_surface + source_to_outer_surface
     pos, angle, pos_matrices, angle_matrices = PP.Initial_Conditions(
         E, height, width)
-    dim = [height, width, innerplate_to_source,
-           source_to_outerplate, thickness, diameter]
+    dim = [height, width, source_to_inner_surface,source_to_outer_surface,thickness,diameter]
     return dim, pos, angle, pos_matrices, angle_matrices
 
 

@@ -5,20 +5,21 @@ import Isotope_Source as IS
 
 #### Declared in the Detector Module ####
 n_decays = 50
-m, E_Pt195m = IS.JANIS_properties(n_decays, 'Pt195m')
-m, E_I125 = IS.JANIS_properties(n_decays, 'I125')
-m, E_Sb119 = IS.JANIS_properties(n_decays, 'Sb119')
-m, E_Hg197 = IS.JANIS_properties(n_decays, 'Hg197')
+m, E = IS.JANIS_properties(n_decays, 'I125')
 
 '''
 Plate Dimensions
 '''
 height = 40e-3  # width (x) 40mm
 width = 40e-3  # height (y)  40mm
-source_displacement = 0.005e-3
+source_to_inner_surface = 0.005e-3
+source_to_outer_surface = 0.005e-3
+thickness = source_to_inner_surface  + source_to_outer_surface
 diameter = 0.4e-3  # 0.4 mm   # detector diameter (z)
-thickness = source_displacement*2  # thickness of the plate 0.02mm
-distance_source_to_inner_plate2 = diameter + source_displacement
+n_rows = len(E[0,:])
+E_flat = E.reshape(n_rows*n_decays)
+E_flat_reduced = E_flat[E_flat!=0]
+n_particles = len(E_flat_reduced)
 colormap = 'plasmas'
 
 '''
@@ -146,15 +147,12 @@ def polar_hist(E,c):
 Plots
 '''
 
-# xy_scatter(E_I125,'plasma')
-# polar_scatter(E_I125,'plasma')
-# xy_hist(E_I125,'blue')
-# polar_hist(E_I125,'blue')
+# xy_scatter(E,'plasma')
+# polar_scatter(E,'plasma')
+# xy_hist(E,'blue')
+# polar_hist(E,'blue')
 # plt.show()
 
-'''
-Return Values
-'''
 
 
 

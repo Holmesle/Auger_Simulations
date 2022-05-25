@@ -263,13 +263,13 @@ def xyz_c(E_array,proj1,n_particles,dim,fig,c):
 
 print(PP.Initial_Conditions(E,height,width)[0])
 print(proj1)
-fig1 = plt.figure(figsize=(9,3))
+# fig1 = plt.figure(figsize=(9,3))
 # fig2 = plt.figure(figsize=(9,3))
-fig3 = plt.figure(figsize=(9,3))
+# fig3 = plt.figure(figsize=(9,3))
 # fig4 = plt.figure(figsize=(9,3))
-xyz_cm(ED1,fp1,n_particles,dim,fig1)
+# xyz_cm(ED1,fp1,n_particles,dim,fig1)
 # xyz_cm(ED2,fp2,n_particles,dim,fig2)
-xyz_c(E1,proj1,n_particles,dim,fig3,'blue')
+# xyz_c(E1,proj1,n_particles,dim,fig3,'blue')
 # plt.suptitle('Plate 1 Pop1')
 # xyz_c(E2,proj2,n_particles,dim,fig4,'lime')
 # plt.suptitle('Plate 1 Pop2')
@@ -286,7 +286,7 @@ xyz_c(E1,proj1,n_particles,dim,fig3,'blue')
 # print('projz1:',projz[projz!=0],np.shape(proj1[0]))
 # print('fp1x:',fp1x[fp1x!=0])
 # print('fp1z:',fp1z[fp1z!=0])
-plt.show()
+# plt.show()
 
 '''
 Energy Remaining
